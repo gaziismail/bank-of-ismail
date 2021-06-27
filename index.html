@@ -14,7 +14,7 @@
         <h1 class="text-center">Wellcome to Bank of Ismail</h1>
         <div class="submit-area">
             <h4>Login</h4>
-            <input type="text" class="form-control" placeholder="Enter your email">
+            <input type="text" class="form-control" placeholder="Enter your email" id="input-name">
             <br>
             <input type="password" class="form-control" placeholder="Enter your password">
             <br>
@@ -23,6 +23,9 @@
     </div>
     <!-- transaction area -->
     <div id="transaction-area">
+        <h1 class="text-center">Hello <span id="transaction-h1"></span></h1>
+        <br>
+        <br>
         <div class="row">
             <div class="col-md-4">
                 <div id="deposit" class="status">
@@ -73,6 +76,12 @@
             loginArea.style.display = "none"
             const transactionArea = document.getElementById('transaction-area');
             transactionArea.style.display = 'block';
+
+            const inputName = document.getElementById('input-name').value;
+
+            const transactionH1 = document.getElementById('transaction-h1').innerText;
+            const transactionH1Name = inputName + transactionH1;
+            document.getElementById('transaction-h1').innerText = transactionH1Name;
         })
 
         // deposit button event handler
